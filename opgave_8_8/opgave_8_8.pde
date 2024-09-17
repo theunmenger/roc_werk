@@ -1,4 +1,4 @@
-long n = 100;
+long n = 50;
 long num1 = 0;
 long num2 = 1;
 
