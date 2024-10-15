@@ -1,16 +1,16 @@
-int num = 5;
+int num = 100;
 
 
 Particle[] particle = new Particle[num];
 
 class Particle {
-  float r = 50;
+  float r = 10;
   float x = 250;
   float y = 0;
-  float gravity = 0.5;
+  float gravity = 0.6;
   float x_speed = 20;
   float y_speed = 0;
-  float friction = 0.9;
+  float friction = 0.85  ;
   float red = random(255);
   float green = random(255);
   float blue = random(255);  
@@ -20,10 +20,6 @@ class Particle {
     this.y = y;
     this.x_speed = x_speed;
     this.y_speed = y_speed;
-  }
-  
-  void drawMe(){
-    
   }
   
   void part() {
@@ -64,11 +60,9 @@ void setup() {
   size(500, 500);
   frameRate(60);
   //setup nieuwe particles
-  particle[0] = new Particle(0, 0, random(30), random(10));
-  particle[1] = new Particle(100, 0, random(30), random(10));
-  particle[2] = new Particle(200, 0, random(30), random(10));
-  particle[3] = new Particle(300, 0, random(30), random(10));
-  particle[4] = new Particle(400, 0, random(30), random(10));
+  for (int i = 0; i < particle.length; i++) {
+    particle[i] = new Particle(50 + random(width - 100), random(height), random(30), random(10));
+  }
 }
 
 
